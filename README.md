@@ -11,7 +11,7 @@ application.
 
 Get started by installing with npm
 
-    npm install react-stripe-checkout
+    npm install react-stripe-checkout-nsen
 
 Requires babel for compiling. If anyone is having issues with that,
 open an issue and I'll do my best to better document the build process.
@@ -96,6 +96,7 @@ This will give you a default *Stripe-style* button which looks like this:
   // Note: you can change the event to `onTouchTap`, `onClick`, `onTouchStart`
   // useful if you're using React-Tap-Event-Plugin
   triggerEvent="onTouchTap"
+  disabled={false}
   >
   <button className="btn btn-primary">
     Use your own child component, which gets wrapped in whatever
