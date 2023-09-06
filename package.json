@@ -1,14 +1,13 @@
 {
   "name": "react-stripe-checkout-nsen",
-  "version": "2.6.4",
+  "version": "2.6.13",
   "description": "Easily inject checkout.js as a react component. Will load the script on demand and supports all the options from stripe docs.",
   "main": "./dist/main.js",
   "types": "./index.d.ts",
   "scripts": {
     "test": "mocha --require babel-register --require .test-setup.js -R spec ./spec.js",
     "cover": "nyc -x './spec.js' -n 'StripeCheckout.js' -r text -r html -r lcov npm test",
-    "watch": "mkdir -p  dist; ./node_modules/.bin/babel StripeCheckout.js --out-file ./dist/main.js --source-maps inline --watch",
-    "build": "mkdir -p dist; ./node_modules/.bin/babel StripeCheckout.js --out-file ./dist/main.js",
+    "build": "babel StripeCheckout.js --out-file ./dist/main.js",
     "version": "npm run build"
   },
   "babel": {
@@ -87,7 +86,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/azmenak/react-stripe-checkout.git"
+    "url": "https://github.com/azmenak/react-stripe-checkout-nsen.git"
   },
   "keywords": [
     "react",
@@ -100,9 +99,9 @@
   "author": "Adam Zmenak <adam.zmenak@gmail.com> (http://azmenak.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/azmenak/react-stripe-checkout/issues"
+    "url": "https://github.com/azmenak/react-stripe-checkout-nsen/issues"
   },
-  "homepage": "https://github.com/azmenak/react-stripe-checkout",
+  "homepage": "https://github.com/azmenak/react-stripe-checkout-nsen",
   "dependencies": {
     "prop-types": "^15.5.8"
   },

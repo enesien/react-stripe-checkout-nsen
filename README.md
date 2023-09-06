@@ -1,6 +1,6 @@
-[![npm version](https://badge.fury.io/js/react-stripe-checkout.svg)](http://badge.fury.io/js/react-stripe-checkout)
-[![Dependencies Status](https://david-dm.org/azmenak/react-stripe-checkout.svg)](https://david-dm.org/react-stripe-checkout)
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/azmenak/react-stripe-checkout)
+[![npm version](https://badge.fury.io/js/react-stripe-checkout-nsen.svg)](http://badge.fury.io/js/react-stripe-checkout-nsen)
+[![Dependencies Status](https://david-dm.org/azmenak/react-stripe-checkout-nsen.svg)](https://david-dm.org/react-stripe-checkout-nsen)
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/azmenak/react-stripe-checkout-nsen)
 
 # React Stripe Checkout Component
 Stripe's Checkout makes it almost too easy to take people's money.
@@ -30,7 +30,7 @@ also documented in `StripeCheckout.js`.
 
 ```jsx
 import React from 'react'
-import StripeCheckout from 'react-stripe-checkout';
+import StripeCheckout from 'react-stripe-checkout-nsen';
 
 export default class TakeMoney extends React.Component {
   onToken = (token) => {
@@ -96,7 +96,6 @@ This will give you a default *Stripe-style* button which looks like this:
   // Note: you can change the event to `onTouchTap`, `onClick`, `onTouchStart`
   // useful if you're using React-Tap-Event-Plugin
   triggerEvent="onTouchTap"
-  disabled={false}
   >
   <button className="btn btn-primary">
     Use your own child component, which gets wrapped in whatever
