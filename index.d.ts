@@ -1,4 +1,4 @@
-declare module "react-stripe-checkout" {
+declare module "react-stripe-checkout-nsen" {
 
     export interface Card {
         id: string
@@ -54,6 +54,8 @@ declare module "react-stripe-checkout" {
 
     export interface StripeCheckoutProps {
         token(token: Token, address?: Address)
+        children?: React.ReactNode
+        disabled?: boolean
         stripeKey: string
         label?: string
         name?: string
@@ -76,5 +78,5 @@ declare module "react-stripe-checkout" {
     }
 
     import React = require("react")
-    export default class StripeCheckout extends React.Component<StripeCheckoutProps, Object> {}
+    export default class ReactStripeCheckout extends React.Component<StripeCheckoutProps, Object> {}
 }

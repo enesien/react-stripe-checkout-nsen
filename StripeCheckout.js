@@ -5,7 +5,7 @@ let scriptLoading = false;
 let scriptLoaded = false;
 let scriptDidError = false;
 
-export default class ReactStripeCheckout extends React.Component {
+export default class ReactStripeCheckoutNsen extends React.Component {
   static defaultProps = {
     className: 'StripeCheckout',
     label: 'Pay With Card',
@@ -261,14 +261,14 @@ export default class ReactStripeCheckout extends React.Component {
     if (this.loadPromise) {
       this.loadPromise.cancel();
     }
-    if (ReactStripeCheckout.stripeHandler && this.state.open) {
-      ReactStripeCheckout.stripeHandler.close();
+    if (ReactStripeCheckoutNsen.stripeHandler && this.state.open) {
+      ReactStripeCheckoutNsen.stripeHandler.close();
     }
   }
 
   onScriptLoaded = () => {
-    if (!ReactStripeCheckout.stripeHandler) {
-      ReactStripeCheckout.stripeHandler = StripeCheckout.configure({
+    if (!ReactStripeCheckoutNsen.stripeHandler) {
+      ReactStripeCheckoutNsen.stripeHandler = StripeCheckout.configure({
         key: this.props.stripeKey,
       });
       if (this.hasPendingClick) {
@@ -324,8 +324,8 @@ export default class ReactStripeCheckout extends React.Component {
   });
 
   updateStripeHandler() {
-    if (!ReactStripeCheckout.stripeHandler || this.props.reconfigureOnUpdate) {
-      ReactStripeCheckout.stripeHandler = StripeCheckout.configure({
+    if (!ReactStripeCheckoutNsen.stripeHandler || this.props.reconfigureOnUpdate) {
+      ReactStripeCheckoutNsen.stripeHandler = StripeCheckout.configure({
         key: this.props.stripeKey,
       });
     }
@@ -345,7 +345,7 @@ export default class ReactStripeCheckout extends React.Component {
 
   showStripeDialog() {
     this.hideLoadingDialog();
-    ReactStripeCheckout.stripeHandler.open(this.getConfig());
+    ReactStripeCheckoutNsen.stripeHandler.open(this.getConfig());
   }
 
   onClick = () => { // eslint-disable-line react/sort-comp
@@ -357,7 +357,7 @@ export default class ReactStripeCheckout extends React.Component {
       try {
         throw new Error('Tried to call onClick, but StripeCheckout failed to load');
       } catch (x) {} // eslint-disable-line no-empty
-    } else if (ReactStripeCheckout.stripeHandler) {
+    } else if (ReactStripeCheckoutNsen.stripeHandler) {
       this.showStripeDialog();
     } else {
       this.showLoadingDialog();
@@ -473,7 +473,7 @@ export default class ReactStripeCheckout extends React.Component {
     if (this.props.desktopShowModal === true && !this.state.open) {
       this.onClick();
     } else if (this.props.desktopShowModal === false && this.state.open) {
-      ReactStripeCheckout.stripeHandler.close();
+      ReactStripeCheckoutNsen.stripeHandler.close();
     }
 
     const { ComponentClass } = this.props;
